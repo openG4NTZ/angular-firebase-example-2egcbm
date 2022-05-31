@@ -1,0 +1,70 @@
+<form>
+  <app-wizard></app-wizard>
+  <button id="Element_ShowItem" (click)="getDataByKey()">Show Item</button>
+  <button id="Element_UpdateItem" (click)="updateItem()">Update Item</button>
+  <select
+    id="Element_PicklistMonth"
+    (change)="onChangeMonth($event.target.value)"
+  >
+    <option>Select Month</option>
+    <option
+      *ngFor="let month of this.monthList; let i = index"
+      value="{{ month.code }}"
+      [selected]="i == -1"
+    >
+      {{ month.name }}
+    </option>
+  </select>
+
+  <button id="Element_DeleteItem" (click)="deleteEverything()">
+    Delete Item
+  </button>
+  <table>
+    <tr *ngFor="let item of items | async">
+      <td>{{ item.key }}</td>
+      <td>{{ item.Title }}</td>
+      <td>{{ item.Description }}</td>
+      <td>{{ item.Cost }}</td>
+      <td>{{ item.CreatedBy }}</td>
+      <td>{{ item.Date }}</td>
+    </tr>
+  </table>
+
+  <div id="wrapper">
+    <button id="Element_AddItem" (click)="addItem()">Add Item</button>
+
+    <input
+      id="Element_Cost"
+      (change)="onChangeCost($event.target.value)"
+      type="text"
+      placeholder="Cost"
+    />
+    <select
+      id="Element_PicklistExpense"
+      (change)="onChangeExpense($event.target.value)"
+    >
+      <option>Select Expense Category</option>
+      <option
+        *ngFor="let item of this.expenseList; let i = index"
+        value="{{ item.code }}"
+        [selected]="i == -1"
+      >
+        {{ item.name }}
+      </option>
+    </select>
+
+    <input
+      id="Element_Other"
+      type="text"
+      [ngModel]="value"
+      (ngModelChange)="valueChanged($event)"
+      placeholder="Other"
+    />
+  </div>
+</form>
+
+<!-- https://github.com/angular/angularfire2/blob/master/docs/rtdb/lists.md
+https://angularfirebase.com/snippets/query-firebase-data-with-the-angular-router/#post-object-ts
+https://angularfirebase.
+com/snippets/angularfire-migration-from-v4-to-v5-guide/
+https://angularfirebase.com/lessons/reactive-crud-app-with-angular-and-firebase-tutorial/ -->

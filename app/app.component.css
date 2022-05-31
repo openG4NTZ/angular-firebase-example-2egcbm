@@ -1,0 +1,58 @@
+p {
+  font-family: Lato;
+}
+#wrapper {
+  height: 70px;
+  width: auto;
+  overflow: hidden; /* will contain if #first is longer than #second */
+}
+#Element_ShowItem {
+  height: 31px;
+  width: 80px;
+  margin-right: 4px;
+  float: left; /* add this */
+  border: 2px solid red;
+}
+#Element_UpdateItem {
+  height: 31px;
+  width: 89px;
+  margin-right: 4px;
+  float: left; /* add this */
+  border: 2px solid red;
+}
+#Element_DeleteItem {
+  height: 31px;
+  width: 85px;
+  margin-right: 4px;
+  float: left; /* add this */
+  border: 2px solid red;
+}
+#Element_AddItem {
+  height: 31px;
+  width: 80px;
+  margin-right: 4px;
+  float: left; /* add this */
+  border: 2px solid red;
+}
+#Element_Cost {
+  height: 25px;
+  width: 81px;
+  border: 2px solid green;
+  overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+#Element_PicklistExpense {
+  height: 31px;
+  border: 2px solid green;
+  overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+#Element_PicklistMonth {
+  height: 31px;
+  border: 2px solid green;
+  overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+#Element_Other {
+  height: 25px;
+  width: 100px;
+  border: 2px solid green;
+  overflow: hidden; /* if you don't want #second to wrap below #first */
+}
