@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
@@ -22,10 +23,12 @@ const config = {
   imports: [
     BrowserModule,
     FormsModule,
+    WizardModule,
+    BrowserAnimationsModule,
     AngularFireModule.initializeApp(config),
     AngularFireDatabaseModule,
   ],
-  declarations: [AppComponent, WizardModule],
+  declarations: [AppComponent],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
